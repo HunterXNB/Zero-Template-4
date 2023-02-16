@@ -44,6 +44,10 @@ body {
   width: 250px;
   box-shadow: 0 0 10px #ddd;
   z-index: 15;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
 }
 
 .sidebar > h3 {
@@ -117,7 +121,14 @@ body {
 /* start content */
 .content {
   overflow: hidden;
+  width: calc(100% - 250px);
+  margin-left: auto;
   z-index: 0;
+}
+@media (max-width: 767px) {
+  .content {
+    width: calc(100% - 62px);
+  }
 }
 .head .search::before {
   font-family: "Font Awesome 6 Free";
@@ -195,7 +206,7 @@ body {
   width: 40px;
 }
 .wrapper {
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   margin-left: 20px;
   margin-right: 20px;
 }
